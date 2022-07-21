@@ -23,7 +23,7 @@ func init() {
 			u, err := search(keyword)
 			if err != nil {
 				//ctx.SendChain(message.Text("ERROR:", err))
-				ctx.SendChain(message.Text("没找到角色名为:【", keyword, "】的信息"))
+				ctx.SendChain(message.Text("没找到角色名为【", keyword, "】的信息"))
 				return
 			}
 			ctx.SendChain(message.Image(u.CharacterImageURL), message.Text(
