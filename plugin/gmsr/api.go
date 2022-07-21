@@ -9,22 +9,27 @@ import (
 )
 
 type userinfo struct {
-	Name       string  `json:"name"`
-	Mid        string  `json:"mid"`
-	Face       string  `json:"face"`
-	Fans       int64   `json:"fans"`
-	Regtime    int64   `json:"regtime"`
-	Attentions []int64 `json:"attentions"`
+	Name               string `json:"Name"`
+	Level              int64  `json:"Level"`
+	ExpPercent         int64  `json:"ExpPercent"`
+	Class              int64  `json:"Class"`
+	CharacterImageURL  int64  `json:"CharacterImageURL"`
+	LegionLevel        int64  `json:"LegionLevel"`
+	LegionRank         int64  `json:"LegionRank"`
+	LegionPower        int64  `json:"LegionPower"`
+	LegionCoinsPerDay  int64  `json:"LegionCoinsPerDay"`
+	ServerClassRanking string `json:"ServerClassRanking"`
+	ServerRank         string `json:"ServerRank"`
 }
 
-// 获取详情
+// 获取详情 CharacterData
 func search(uid string) (result userinfo, err error) {
-	cardURL := "https://account.bilibili.com/api/member/getCardByMid?mid=" + uid
+	cardURL := "https://api.maplestory.gg/v2/public/character/gms/" + uid
 	data, err := web.GetData(cardURL)
 	if err != nil {
 		return
 	}
-	err = json.Unmarshal(binary.StringToBytes(gjson.ParseBytes(data).Get("card").Raw), &result)
+	err = json.Unmarshal(binary.StringToBytes(gjson.ParseBytes(data).Get("CharacterData").Raw), &result)
 	if err != nil {
 		return
 	}

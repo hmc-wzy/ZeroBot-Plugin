@@ -25,6 +25,7 @@ func init() {
 				ctx.SendChain(message.Text("ERROR:", err))
 				return
 			}
+
 			// ctx.SendChain(message.Text(
 			// 	"search: ", fo.Mid, "\n",
 			// 	"名字: ", fo.Uname, "\n",
@@ -37,7 +38,7 @@ func init() {
 			// 	"数据来源: ", "https://vtbs.moe/detail/", fo.Mid, "\n",
 			// 	"数据获取时间: ", time.Now().Format("2006-01-02 15:04:05"),
 			// ))
-			ctx.SendChain(message.Text(u.Name))
+			ctx.SendChain(message.Text(u.Level))
 		})
 
 	engine.OnFullMatch("zbphelloworld").SetBlock(true).
