@@ -9,17 +9,17 @@ import (
 )
 
 type userinfo struct {
-	Name               string `json:"Name"`
-	Level              string `json:"Level"`
-	ExpPercent         string `json:"ExpPercent"`
-	Class              string `json:"Class"`
-	CharacterImageURL  string `json:"CharacterImageURL"`
-	LegionLevel        string `json:"LegionLevel"`
-	LegionRank         string `json:"LegionRank"`
-	LegionPower        string `json:"LegionPower"`
-	LegionCoinsPerDay  string `json:"LegionCoinsPerDay"`
-	ServerClassRanking string `json:"ServerClassRanking"`
-	ServerRank         string `json:"ServerRank"`
+	Name               string  `json:"Name"`
+	Level              int64   `json:"Level"`
+	ExpPercent         float64 `json:"ExpPercent"`
+	Class              string  `json:"Class"`
+	CharacterImageURL  string  `json:"CharacterImageURL"`
+	LegionLevel        int64   `json:"LegionLevel"`
+	LegionRank         int64   `json:"LegionRank"`
+	LegionPower        int64   `json:"LegionPower"`
+	LegionCoinsPerDay  int64   `json:"LegionCoinsPerDay"`
+	ServerClassRanking int64   `json:"ServerClassRanking"`
+	ServerRank         int64   `json:"ServerRank"`
 }
 
 // 获取详情 CharacterData
