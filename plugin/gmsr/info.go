@@ -15,14 +15,15 @@ var engine = control.Register("gmsr", &ctrl.Options[*zero.Ctx]{
 	PublicDataFolder: "Gmsr",
 })
 
-// 查成分的
+// 查询GMS角色信息
 func init() {
 	engine.OnRegex(`^查询\s*([A-Za-z0-9]+)$`).SetBlock(true).
 		Handle(func(ctx *zero.Ctx) {
 			keyword := ctx.State["regex_matched"].([]string)[1]
 			u, err := search(keyword)
 			if err != nil {
-				ctx.SendChain(message.Text("ERROR:", err))
+				//ctx.SendChain(message.Text("ERROR:", err))
+				ctx.SendChain(message.Text("没找到角色名为:【", keyword, "】的信息"))
 				return
 			}
 			ctx.SendChain(message.Image(u.CharacterImageURL), message.Text(
