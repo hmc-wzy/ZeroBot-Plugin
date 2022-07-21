@@ -12,7 +12,7 @@ var engine = control.Register("gmsr", &ctrl.Options[*zero.Ctx]{
 	DisableOnDefault: false,
 	Help: "gmsr\n" +
 		"查询+角色名\n",
-	PublicDataFolder: "gmsr",
+	PublicDataFolder: "Gmsr",
 })
 
 // 查成分的
