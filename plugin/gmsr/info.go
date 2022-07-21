@@ -25,20 +25,19 @@ func init() {
 				ctx.SendChain(message.Text("ERROR:", err))
 				return
 			}
-
-			// ctx.SendChain(message.Text(
-			// 	"search: ", fo.Mid, "\n",
-			// 	"名字: ", fo.Uname, "\n",
-			// 	"当前粉丝数: ", fo.Follower, "\n",
-			// 	"24h涨粉数: ", fo.Rise, "\n",
-			// 	"视频投稿数: ", fo.Video, "\n",
-			// 	"直播间id: ", fo.Roomid, "\n",
-			// 	"舰队: ", fo.GuardNum, "\n",
-			// 	"直播总排名: ", fo.AreaRank, "\n",
-			// 	"数据来源: ", "https://vtbs.moe/detail/", fo.Mid, "\n",
-			// 	"数据获取时间: ", time.Now().Format("2006-01-02 15:04:05"),
-			// ))
-			ctx.SendChain(message.Text(u.Level))
+			ctx.SendChain(message.Image(u.CharacterImageURL))
+			ctx.SendChain(message.Text(
+				"名字: ", u.Name, "\n",
+				"等级: ", u.Level, "\n",
+				"当前经验百分比: ", u.ExpPercent, "\n",
+				"职业: ", u.Class, "\n",
+				"联盟等级: ", u.LegionLevel, "\n",
+				"联盟排名: ", u.LegionRank, "\n",
+				"联盟战斗力: ", u.LegionPower, "\n",
+				"每日获得联盟币: ", u.LegionCoinsPerDay, "\n",
+				"职业等级排名: ", u.ServerClassRanking, "\n",
+				"总等级排名: ", u.ServerRank, "\n",
+			))
 		})
 
 	engine.OnFullMatch("zbphelloworld").SetBlock(true).
