@@ -1,4 +1,4 @@
-module github.com/FloatTech/ZeroBot-Plugin
+module github.com/hmc-wzy/ZeroBot-Plugin
 
 go 1.18
 
