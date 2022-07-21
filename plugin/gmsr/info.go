@@ -25,8 +25,7 @@ func init() {
 				ctx.SendChain(message.Text("ERROR:", err))
 				return
 			}
-			ctx.SendChain(message.Image(u.CharacterImageURL))
-			ctx.SendChain(message.Text(
+			ctx.SendChain(message.Image(u.CharacterImageURL), message.Text(
 				"名字: ", u.Name, "\n",
 				"等级: ", u.Level, "\n",
 				"当前经验百分比: ", u.ExpPercent, "\n",
