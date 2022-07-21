@@ -17,7 +17,7 @@ var engine = control.Register("gmsr", &ctrl.Options[*zero.Ctx]{
 
 // 查成分的
 func init() {
-	engine.OnRegex(`^查询\s?(.{1,15})$`).SetBlock(true).
+	engine.OnRegex(`^查询\s?([A-Za-z0-9]+)$`).SetBlock(true).
 		Handle(func(ctx *zero.Ctx) {
 			keyword := ctx.State["regex_matched"].([]string)[1]
 
