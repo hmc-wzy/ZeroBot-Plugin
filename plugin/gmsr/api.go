@@ -18,7 +18,7 @@ type userinfo struct {
 }
 
 // 获取详情
-func card(uid string) (result userinfo, err error) {
+func search(uid string) (result userinfo, err error) {
 	cardURL := "https://account.bilibili.com/api/member/getCardByMid?mid=" + uid
 	data, err := web.GetData(cardURL)
 	if err != nil {
